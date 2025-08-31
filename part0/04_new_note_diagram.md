@@ -1,49 +1,47 @@
-```mermaid
-
 sequenceDiagram
   participant browser
   participant backend
 
-  browser->>backend: POST https://studies.cs.helsinki.fi/exampleapp/new_note
+  browser->>backend: POST /new_note
   activate backend
-  backend->>browser: Gives back 302 code and bring changes in the page
+  backend-->>browser: 302 Found (redirect)
   deactivate backend
 
-  browser->>backend: GET https://studies.cs.helsinki.fi/exampleapp/notes
+  browser->>backend: GET /notes
   activate backend
-  backend->>browser: Gives back 200 code and html file
+  backend-->>browser: 200 OK (HTML file)
   deactivate backend
 
-  broweser->>backend: GET https://studies.cs.helsinki.fi/exampleapp/main.css
+  browser->>backend: GET /main.css
   activate backend
-  backend->>browser: Gives back 200 code CSS file
+  backend-->>browser: 200 OK (CSS file)
   deactivate backend
 
-  browser->>backend: GET https://studies.cs.helsinki.fi/exampleapp/main.js
+  browser->>backend: GET /main.js
   activate backend
-  backend->>browser: Gives back 200 code JS file
+  backend-->>browser: 200 OK (JS file)
   deactivate backend
 
-  Note right of browser: Browser executes Javascript file
+  Note right of browser: Browser executes JavaScript
 
-  browser->>backend: GET https://studies.cs.helsinki.fi/exampleapp/data.json
+  browser->>backend: GET /data.json
   activate backend
-  backend->>browser: Sends data for the html in json format
+  backend-->>browser: 200 OK (JSON data)
   deactivate backend
 
-  Note right of browser: Browser renders the notes from data.json
+  Note right of browser: Browser renders notes from JSON
 
-  browser->>backend: GET https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap
+  browser->>backend: GET fonts.googleapis.com/Inter
   activate backend
-  backend->>browser: Gives back 200 code and loads google inter fonts in html
+  backend-->>browser: 200 OK (Inter font)
   deactivate backend
 
-  browser->>backend: GET "https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap"
+  browser->>backend: GET fonts.googleapis.com/Roboto
   activate backend
-  backend->>browser: Gives back 200 code and loads google roboto fonts in html
+  backend-->>browser: 200 OK (Roboto font)
   deactivate backend  
 
-  browser->>backend: GET "https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+  browser->>backend: GET fonts.googleapis.com/RobotoMono
   activate backend
-  backend->>browser: Gives back 200 code and loads google roboto mono fonts in html
-  deactivate backend   
+  backend-->>browser: 200 OK (Roboto Mono font)
+  deactivate backend
