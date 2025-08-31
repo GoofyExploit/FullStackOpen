@@ -31,19 +31,19 @@ sequenceDiagram
   backend->>browser: Sends data for the html in json format
   deactivate backend
 
-   Note right of browser: Browser renders the notes from data.json
+  Note right of browser: Browser renders the notes from data.json
 
   browser->>backend: GET https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap
   activate backend
   backend->>browser: Gives back 200 code and loads google inter fonts in html
   deactivate backend
 
-  browser->>backend: GET https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap
+  browser->>backend: GET "https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap"
   activate backend
   backend->>browser: Gives back 200 code and loads google roboto fonts in html
   deactivate backend  
 
-  browser->>backend: GET https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap
+  browser->>backend: GET "https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
   activate backend
   backend->>browser: Gives back 200 code and loads google roboto mono fonts in html
   deactivate backend   
