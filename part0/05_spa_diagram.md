@@ -27,7 +27,7 @@ sequenceDiagram
 
   Note right of browser: Browser render notes from JSON 
 
-    browser->>backend: GET fonts.googleapis.com/Inter
+  browser->>backend: GET fonts.googleapis.com/Inter
   activate backend
   backend-->>browser: 200 OK (Inter font)
   deactivate backend
