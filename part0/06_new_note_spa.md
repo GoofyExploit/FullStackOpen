@@ -9,4 +9,4 @@ sequenceDiagram
   backend->>browser: 201 and Message recevied in JSON format
   deactivate backend
 
-  Note right of broswer: {"message":"note created"}
+  Note right of browser: {"message":"note created"}
